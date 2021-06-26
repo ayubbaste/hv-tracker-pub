@@ -1,9 +1,9 @@
-# Vacanies HV-tracker-pub from career.habr.com
+## Career.habr.com new vacancies tracker 
 Welcome to the HV-Tracker-Pub wiki!
 
->It parses new vacancies from https://career.habr.com/ and sends them to Telegram.
+>It parses new vacancies from https://career.habr.com/ and sends them to your Telegram.
 
-<b>All dependencies</b>
+<b>Before you start</b>
 
 - Get Telegram API_ID and API_HASH here: https://my.telegram.org/
 
@@ -39,4 +39,4 @@ parse_url= "career.habr url with vacancies" # Str. Example: 'https://career.habr
 python tracker.py
 ```
 
-Automate the launch of the script with Cron or any other way.
+Automate the launch of the script with Cron or any other way. Vacanies HV-tracker-pub from career.habr.com
