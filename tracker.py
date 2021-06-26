@@ -12,19 +12,16 @@ api_hash = "your API_HASH" # Str. Example: 'xx11111xxxx111x1111111x1x1xx11x1'
 bot_token = "your BOT_TOKEN" # Str. Example: '1111111111:XXX111xXXXXxxExXx1xXXXXXx1xx1x_XxxX'
 recipients = [CHAT_IDs] # Digits. Example: [-1112223334445, -2223334445556]
 
-
 # URL to parse
 url = "habr url" # Str.Example: 'https://career.habr.com/vacancies?divisions[]=backend&type=all'
 
 # Here will be messages to send
 messages = []
 
-
 # BeautifulSoup
 page = requests.get(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 vcards = soup.find_all("div", "vacancy-card")
-
 
 # Make/open a file with/for parsed vacancy links
 try:
@@ -36,7 +33,6 @@ except:
         old_data = []
         json.dump(old_data, basefile)
         basefile.close()
-
 
 # Vacancy data
 for vcard in vcards:
@@ -83,8 +79,6 @@ for vcard in vcards:
 
         messages.append(message)
 
-
-
 # If there is a new vacancies
 if len(messages) > 0:
     try:
@@ -95,21 +89,17 @@ if len(messages) > 0:
             bot_token = bot_token
         )
 
-
         # Send them with telegram
         for message in messages:
-
             async def main():
                 async with app:
                     for recipient in recipients:
                         await app.send_message(recipient, message, parse_mode="html", disable_web_page_preview = True)
-
             app.run(main())
 
         # And add links to parsed vacancy links file
         with open('base.txt', "w+") as exportfile:
             json.dump(old_data, exportfile)
             exportfile.close()
-
     except:
         pass
