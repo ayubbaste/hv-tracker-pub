@@ -1,4 +1,4 @@
-## Career.habr.com new vacancies tracker 
+## Career.habr.com new vacancies tracker with Telegram notifications
 Welcome to the HV-Tracker-Pub wiki!
 
 >It parses new vacancies from https://career.habr.com/ and sends them to your Telegram.
